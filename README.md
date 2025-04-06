@@ -279,10 +279,13 @@ A. This is actually a 'feature' of bash. bash recognises a colon as
    ```
 
    Here, the colons make bash think that it's completing a new token
-   that begins with 'B'.
-
-   Unfortunately, there's no way to turn this off. The only thing you
-   can do is escape the colons with a backslash.
+   that begins with 'B'. If you want to turn it off, you could add
+   the following line in your `~/.bashrc`:
+   
+   ```bashrc
+   COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
+   ```
+   Alternatively, you can escape the colons with a backslash in command line.
 
 **Q. Why is `rpm` completion so slow with `-q`?**
 
